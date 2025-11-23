@@ -1,0 +1,211 @@
+<svg width="1200" height="1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2c3e50; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #34495e; }
+      .text { font-family: Arial, sans-serif; font-size: 12px; fill: #2c3e50; }
+      .small-text { font-family: Arial, sans-serif; font-size: 10px; fill: #7f8c8d; }
+      .start-end { fill: #e74c3c; stroke: #c0392b; stroke-width: 2; }
+      .process { fill: #3498db; stroke: #2980b9; stroke-width: 2; }
+      .decision { fill: #f39c12; stroke: #e67e22; stroke-width: 2; }
+      .data { fill: #2ecc71; stroke: #27ae60; stroke-width: 2; }
+      .module { fill: #9b59b6; stroke: #8e44ad; stroke-width: 2; }
+      .arrow { stroke: #34495e; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .success-arrow { stroke: #27ae60; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .error-arrow { stroke: #e74c3c; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e" />
+    </marker>
+  </defs>
+  
+  <!-- 标题 -->
+  <text x="600" y="30" text-anchor="middle" class="title">应急管理部证照真伪验证查询工具 - 代码流程图</text>
+  
+  <!-- 主要模块说明 -->
+  <rect x="50" y="50" width="200" height="80" class="module" rx="10"/>
+  <text x="150" y="75" text-anchor="middle" class="subtitle">主要模块</text>
+  <text x="60" y="95" class="text">• ImprovedCertificateChecker</text>
+  <text x="60" y="110" class="text">• EnhancedCaptchaRecognizer</text>
+  <text x="60" y="125" class="text">• Playwright浏览器自动化</text>
+  
+  <!-- 开始 -->
+  <ellipse cx="600" cy="90" rx="80" ry="25" class="start-end"/>
+  <text x="600" y="95" text-anchor="middle" class="text" fill="white">开始</text>
+  
+  <!-- 初始化 -->
+  <rect x="520" y="140" width="160" height="40" class="process" rx="5"/>
+  <text x="600" y="165" text-anchor="middle" class="text" fill="white">初始化系统</text>
+  
+  <!-- 选择查询模式 -->
+  <polygon points="520,220 600,200 680,220 600,240" class="decision"/>
+  <text x="600" y="225" text-anchor="middle" class="text">选择查询模式</text>
+  
+  <!-- 单个查询分支 -->
+  <rect x="300" y="280" width="120" height="40" class="process" rx="5"/>
+  <text x="360" y="305" text-anchor="middle" class="text" fill="white">单个证书查询</text>
+  
+  <!-- 批量查询分支 -->
+  <rect x="780" y="280" width="120" height="40" class="process" rx="5"/>
+  <text x="840" y="305" text-anchor="middle" class="text" fill="white">批量CSV查询</text>
+  
+  <!-- CSV文件读取 -->
+  <rect x="780" y="350" width="120" height="40" class="data" rx="5"/>
+  <text x="840" y="375" text-anchor="middle" class="text">读取CSV文件</text>
+  
+  <!-- 循环处理 -->
+  <rect x="780" y="420" width="120" height="40" class="process" rx="5"/>
+  <text x="840" y="445" text-anchor="middle" class="text" fill="white">循环处理每条记录</text>
+  
+  <!-- 单个查询核心流程 -->
+  <rect x="300" y="500" width="600" height="30" class="subtitle" rx="5" fill="#ecf0f1" stroke="#bdc3c7"/>
+  <text x="600" y="520" text-anchor="middle" class="subtitle">单个证书查询核心流程</text>
+  
+  <!-- 导航到查询页面 -->
+  <rect x="520" y="560" width="160" height="40" class="process" rx="5"/>
+  <text x="600" y="585" text-anchor="middle" class="text" fill="white">导航到查询页面</text>
+  
+  <!-- 选择证件类型 -->
+  <rect x="520" y="630" width="160" height="40" class="process" rx="5"/>
+  <text x="600" y="655" text-anchor="middle" class="text" fill="white">选择证件类型</text>
+  
+  <!-- 输入证件信息 -->
+  <rect x="520" y="700" width="160" height="40" class="process" rx="5"/>
+  <text x="600" y="725" text-anchor="middle" class="text" fill="white">输入证件信息</text>
+  
+  <!-- 验证码识别模块 -->
+  <rect x="50" y="770" width="300" height="150" class="module" rx="10"/>
+  <text x="200" y="795" text-anchor="middle" class="subtitle" fill="white">验证码识别模块</text>
+  <text x="60" y="815" class="text" fill="white">1. 获取验证码图片</text>
+  <text x="60" y="835" class="text" fill="white">2. 多种预处理方法:</text>
+  <text x="70" y="850" class="small-text" fill="white">• 标准处理 • 降噪 • 增强 • 二值化</text>
+  <text x="60" y="870" class="text" fill="white">3. 多模型OCR识别:</text>
+  <text x="70" y="885" class="small-text" fill="white">• 标准模型 • 数字字母模型</text>
+  <text x="60" y="905" class="text" fill="white">4. 一致性分析与置信度计算</text>
+  
+  <!-- 验证码处理 -->
+  <rect x="520" y="770" width="160" height="40" class="process" rx="5"/>
+  <text x="600" y="795" text-anchor="middle" class="text" fill="white">验证码识别处理</text>
+  
+  <!-- 验证码成功判断 -->
+  <polygon points="520,850 600,830 680,850 600,870" class="decision"/>
+  <text x="600" y="855" text-anchor="middle" class="text">识别成功?</text>
+  
+  <!-- 重试验证码 -->
+  <rect x="750" y="830" width="120" height="40" class="process" rx="5"/>
+  <text x="810" y="855" text-anchor="middle" class="text" fill="white">刷新重试</text>
+  
+  <!-- 提交查询 -->
+  <rect x="520" y="920" width="160" height="40" class="process" rx="5"/>
+  <text x="600" y="945" text-anchor="middle" class="text" fill="white">提交查询请求</text>
+  
+  <!-- 结果分析 -->
+  <rect x="520" y="990" width="160" height="40" class="process" rx="5"/>
+  <text x="600" y="1015" text-anchor="middle" class="text" fill="white">分析查询结果</text>
+  
+  <!-- 结果类型判断 -->
+  <polygon points="450,1080 600,1050 750,1080 600,1110" class="decision"/>
+  <text x="600" y="1085" text-anchor="middle" class="text">结果类型</text>
+  
+  <!-- 找到信息 -->
+  <rect x="200" y="1150" width="100" height="40" class="data" rx="5"/>
+  <text x="250" y="1175" text-anchor="middle" class="text">找到信息</text>
+  
+  <!-- 未找到信息 -->
+  <rect x="350" y="1150" width="100" height="40" class="data" rx="5"/>
+  <text x="400" y="1175" text-anchor="middle" class="text">未找到信息</text>
+  
+  <!-- 输入错误 -->
+  <rect x="500" y="1150" width="100" height="40" class="data" rx="5"/>
+  <text x="550" y="1175" text-anchor="middle" class="text">输入错误</text>
+  
+  <!-- 其他错误 -->
+  <rect x="650" y="1150" width="100" height="40" class="data" rx="5"/>
+  <text x="700" y="1175" text-anchor="middle" class="text">其他错误</text>
+  
+  <!-- 保存结果 -->
+  <rect x="520" y="1230" width="160" height="40" class="process" rx="5"/>
+  <text x="600" y="1255" text-anchor="middle" class="text" fill="white">保存查询结果</text>
+  
+  <!-- 输出文件 -->
+  <rect x="400" y="1300" width="400" height="80" class="data" rx="10"/>
+  <text x="600" y="1325" text-anchor="middle" class="subtitle">输出文件</text>
+  <text x="420" y="1345" class="text">• JSON结果文件 • CSV结果文件</text>
+  <text x="420" y="1360" class="text">• 查询截图 • 验证码图片</text>
+  <text x="420" y="1375" class="text">• 统计信息 • 错误日志</text>
+  
+  <!-- 统计信息 -->
+  <rect x="850" y="1300" width="200" height="80" class="module" rx="10"/>
+  <text x="950" y="1325" text-anchor="middle" class="subtitle" fill="white">统计信息</text>
+  <text x="860" y="1345" class="text" fill="white">• 查询成功率</text>
+  <text x="860" y="1360" class="text" fill="white">• 验证码识别率</text>
+  <text x="860" y="1375" class="text" fill="white">• 平均查询时间</text>
+  
+  <!-- 结束 -->
+  <ellipse cx="600" cy="1450" rx="80" ry="25" class="start-end"/>
+  <text x="600" y="1455" text-anchor="middle" class="text" fill="white">结束</text>
+  
+  <!-- 技术特性说明 -->
+  <rect x="50" y="1500" width="1100" height="80" class="subtitle" rx="5" fill="#ecf0f1" stroke="#bdc3c7"/>
+  <text x="600" y="1525" text-anchor="middle" class="subtitle">技术特性</text>
+  <text x="70" y="1545" class="text">• 异步并发处理 • 多模型OCR组合识别 • 智能重试机制 • 反反爬虫策略</text>
+  <text x="70" y="1560" class="text">• 实时进度监控 • 详细统计分析 • 多格式结果导出 • 错误恢复机制</text>
+  <text x="70" y="1575" class="text">• 图像预处理优化 • 置信度计算 • 批量查询优化 • 跨平台支持</text>
+  
+  <!-- 连接线 -->
+  <!-- 主流程 -->
+  <line x1="600" y1="115" x2="600" y2="140" class="arrow"/>
+  <line x1="600" y1="180" x2="600" y2="200" class="arrow"/>
+  
+  <!-- 分支 -->
+  <line x1="550" y1="220" x2="360" y2="280" class="arrow"/>
+  <line x1="650" y1="220" x2="840" y2="280" class="arrow"/>
+  
+  <!-- 批量查询流程 -->
+  <line x1="840" y1="320" x2="840" y2="350" class="arrow"/>
+  <line x1="840" y1="390" x2="840" y2="420" class="arrow"/>
+  <line x1="780" y1="440" x2="360" y2="320" class="arrow"/>
+  
+  <!-- 单个查询流程 -->
+  <line x1="360" y1="320" x2="600" y2="560" class="arrow"/>
+  <line x1="600" y1="600" x2="600" y2="630" class="arrow"/>
+  <line x1="600" y1="670" x2="600" y2="700" class="arrow"/>
+  <line x1="600" y1="740" x2="600" y2="770" class="arrow"/>
+  
+  <!-- 验证码模块连接 -->
+  <line x1="350" y1="845" x2="520" y2="795" class="arrow"/>
+  
+  <!-- 验证码处理 -->
+  <line x1="600" y1="810" x2="600" y2="830" class="arrow"/>
+  <line x1="680" y1="850" x2="750" y2="850" class="error-arrow"/>
+  <line x1="810" y1="830" x2="810" y2="795" class="arrow"/>
+  <line x1="750" y1="795" x2="680" y2="795" class="arrow"/>
+  
+  <!-- 成功路径 -->
+  <line x1="600" y1="870" x2="600" y2="920" class="success-arrow"/>
+  <line x1="600" y1="960" x2="600" y2="990" class="arrow"/>
+  <line x1="600" y1="1030" x2="600" y2="1050" class="arrow"/>
+  
+  <!-- 结果分支 -->
+  <line x1="500" y1="1080" x2="250" y2="1150" class="success-arrow"/>
+  <line x1="550" y1="1080" x2="400" y2="1150" class="arrow"/>
+  <line x1="600" y1="1110" x2="550" y2="1150" class="error-arrow"/>
+  <line x1="650" y1="1080" x2="700" y2="1150" class="error-arrow"/>
+  
+  <!-- 汇聚到保存结果 -->
+  <line x1="250" y1="1190" x2="550" y2="1230" class="arrow"/>
+  <line x1="400" y1="1190" x2="580" y2="1230" class="arrow"/>
+  <line x1="550" y1="1190" x2="600" y2="1230" class="arrow"/>
+  <line x1="700" y1="1190" x2="620" y2="1230" class="arrow"/>
+  
+  <!-- 最终输出 -->
+  <line x1="600" y1="1270" x2="600" y2="1300" class="arrow"/>
+  <line x1="600" y1="1380" x2="600" y2="1425" class="arrow"/>
+  
+  <!-- 标注文字 -->
+  <text x="480" y="250" class="small-text">单个</text>
+  <text x="720" y="250" class="small-text">批量</text>
+  <text x="720" y="870" class="small-text">失败</text>
+  <text x="600" y="900" class="small-text">成功</text>
+  
+</svg>
